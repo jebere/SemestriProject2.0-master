@@ -37,6 +37,9 @@ namespace SemestriProject.Tests.Pages.SeaFreight
         public void PageUrlTest() => Assert.AreEqual("/SeaFreight/Europe", obj.PageUrl);
 
         [TestMethod]
+        public void getPageUrlTest() => Assert.AreEqual("/SeaFreight/Europe", obj.getPageUrl());
+
+        [TestMethod]
         public void ToObjectTest()
         {
             var view = GetRandom.Object<EuropeView>();

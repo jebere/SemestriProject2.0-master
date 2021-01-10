@@ -4,9 +4,9 @@ using SemestriProject.Facade.Common;
 namespace SemestriProject.Tests.Facade.Common
 {
     [TestClass]
-    public class AirFreightViewTests : AbstractClassTests<AirFreightView, DefinedEntityView>
+    public class AirFreightEntityViewTests : AbstractClassTests<AirFreightEntityView, DefinedEntityView>
     {
-        private class testClass : AirFreightView { }
+        private class testClass : AirFreightEntityView { }
 
         [TestInitialize]
         public override void TestInitialize()

@@ -14,14 +14,14 @@ namespace SemestriProject.Pages.Order
 
         public override string ItemId => Item?.Id ?? string.Empty;
 
-        protected internal override string getPageUrl() => "/Order/MakeOrder";
+        public override string getPageUrl() => "/Order/MakeOrder";
 
-        protected internal override MakeOrder toObject(MakeOrderView view)
+        public override MakeOrder toObject(MakeOrderView view)
         {
             return MakeOrderViewFactory.Create(view);
         }
 
-        protected internal override MakeOrderView toView(MakeOrder obj)
+        public override MakeOrderView toView(MakeOrder obj)
         {
             return MakeOrderViewFactory.Create(obj);
         }

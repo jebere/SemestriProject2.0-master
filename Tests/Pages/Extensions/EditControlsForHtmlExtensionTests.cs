@@ -14,7 +14,7 @@ namespace SemestriProject.Tests.Pages.Extensions
         [TestMethod]
         public void EditControlsForTest()
         {
-            var obj = new HtmlHelperMock<RoadFreightView>().EditControlsFor(x => x.Loading);
+            var obj = new HtmlHelperMock<RoadFreightEntityView>().EditControlsFor(x => x.Loading);
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
 
@@ -22,7 +22,7 @@ namespace SemestriProject.Tests.Pages.Extensions
         public void HtmlStringsTest()
         {
             var expected = new List<string> { "<div", "LabelFor", "EditorFor", "ValidationMessageFor", "</div>" };
-            var actual = EditControlsForHtmlExtension.htmlStrings(new HtmlHelperMock<PeriodView>(), x => x.OrderTime);
+            var actual = EditControlsForHtmlExtension.htmlStrings(new HtmlHelperMock<PeriodView>(), x => x.ReadyForCollection);
             TestHtml.Strings(actual, expected);
         }
     }

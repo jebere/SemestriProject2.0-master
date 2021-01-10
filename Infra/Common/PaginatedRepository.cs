@@ -18,20 +18,20 @@ namespace SemestriProject.Infra.Common
 
         protected PaginatedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
-        internal int getTotalPages(in int pageSize)
+        public int getTotalPages(in int pageSize)
         {
             var count = getItemsCount();
             var pages = countTotalPages(count, pageSize);
             return pages;
         }
 
-        internal int countTotalPages(int count, in int pageSize) => (int)Math.Ceiling(count / (double)pageSize);
+        public int countTotalPages(int count, in int pageSize) => (int)Math.Ceiling(count / (double)pageSize);
 
-        internal int getItemsCount() => base.createSqlQuery().CountAsync().Result;
+        public int getItemsCount() => base.createSqlQuery().CountAsync().Result;
 
-        protected internal override IQueryable<TData> createSqlQuery() => addSkipAndTake(base.createSqlQuery());
+        public override IQueryable<TData> createSqlQuery() => addSkipAndTake(base.createSqlQuery());
 
-        internal IQueryable<TData> addSkipAndTake(IQueryable<TData> query)
+        public IQueryable<TData> addSkipAndTake(IQueryable<TData> query)
         {
             if (PageIndex < 1) return query;
             return query

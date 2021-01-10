@@ -20,6 +20,10 @@ namespace SemestriProject.Tests.Facade.Common
         {
             isNullableProperty(() => obj.TravelTime, x => obj.TravelTime = x);
         }
-
+        [TestMethod]
+        public void OrderTimeTest()
+        {
+            isNullableProperty(() => obj.OrderTime, x => obj.OrderTime = x);
+        }
     }
 }

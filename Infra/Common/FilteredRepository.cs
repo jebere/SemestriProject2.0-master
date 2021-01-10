@@ -17,7 +17,7 @@ namespace SemestriProject.Infra.Common
 
         protected FilteredRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
-        protected internal override IQueryable<TData> createSqlQuery()
+        public override IQueryable<TData> createSqlQuery()
         {
             var query = base.createSqlQuery();
             query = addFiltering(query);
@@ -26,13 +26,13 @@ namespace SemestriProject.Infra.Common
             return query;
         }
 
-        private IQueryable<TData> addFixedFiltering(IQueryable<TData> query)
+        public IQueryable<TData> addFixedFiltering(IQueryable<TData> query)
         {
             var expression = createFixedWhereExpression();
             return expression is null ? query: query.Where(expression);
         }
 
-        private Expression<Func<TData, bool>> createFixedWhereExpression()
+        public Expression<Func<TData, bool>> createFixedWhereExpression()
         {
             if (string.IsNullOrWhiteSpace(FixedValue)) return null;
             if (string.IsNullOrWhiteSpace(FixedFilter)) return null;
@@ -49,8 +49,8 @@ namespace SemestriProject.Infra.Common
 
             return Expression.Lambda<Func<TData, bool>>(predicate, param);
         }
-        
-        internal IQueryable<TData> addFiltering(IQueryable<TData> query)
+
+        public IQueryable<TData> addFiltering(IQueryable<TData> query)
         {
             if (string.IsNullOrEmpty(SearchString)) return query;
             var expression = createWhereExpression();
@@ -58,7 +58,7 @@ namespace SemestriProject.Infra.Common
             return expression is null ? query : query.Where(expression);
         }
 
-        internal Expression<Func<TData, bool>> createWhereExpression()
+        public Expression<Func<TData, bool>> createWhereExpression()
         {
             if (string.IsNullOrWhiteSpace(SearchString)) return null;
             var param = Expression.Parameter(typeof(TData), "s");

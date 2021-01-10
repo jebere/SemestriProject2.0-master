@@ -19,9 +19,14 @@ namespace SemestriProject.Tests.Facade.Common
     }
 
     [TestMethod]
-    public void OrderTimeTest()
+    public void ReadyForCollectionTest()
     {
-        isNullableProperty(() => obj.OrderTime, x => obj.OrderTime = x);
+        isNullableProperty(() => obj.ReadyForCollection, x => obj.ReadyForCollection = x);
+    }
+    [TestMethod]
+    public void RequestedDeliveryTimeTest()
+    {
+        isNullableProperty(() => obj.RequestedDeliveryTime, x => obj.RequestedDeliveryTime = x);
     }
 
     }

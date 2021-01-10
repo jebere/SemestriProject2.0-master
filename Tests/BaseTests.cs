@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using Abc.Aids;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SemestriProject.Aids;
 using SemestriProject.Aids.Reflection;
 
 

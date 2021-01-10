@@ -8,7 +8,7 @@ namespace SemestriProject.Infra.AirFreight
     {
         public ChinaRepository(AirFreightDbContext c) : base(c, c.China) { }
 
-        protected internal override China toDomainObjects(ChinaData d) => new China(d);
+        public override China toDomainObjects(ChinaData d) => new China(d);
 
     }
 }

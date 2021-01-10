@@ -52,7 +52,7 @@ namespace SemestriProject.Tests.Infra.AirFreight
                         Assert.IsNotNull(key.Properties.FirstOrDefault(x => x.Name == name));
                     }
             }
-
+            
             static void testEntity<T>(ModelBuilder b, params Expression<Func<T, object>>[] values)
             {
                 var name = typeof(T).FullName ?? string.Empty;

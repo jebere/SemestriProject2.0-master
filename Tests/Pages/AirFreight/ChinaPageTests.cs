@@ -36,6 +36,9 @@ namespace SemestriProject.Tests.Pages.AirFreight
         public void PageUrlTest() => Assert.AreEqual("/AirFreight/China", obj.PageUrl);
 
         [TestMethod]
+        public void getPageUrlTest() => Assert.AreEqual("/AirFreight/China", obj.getPageUrl());
+
+        [TestMethod]
         public void ToObjectTest()
         {
             var view = GetRandom.Object<ChinaView>();

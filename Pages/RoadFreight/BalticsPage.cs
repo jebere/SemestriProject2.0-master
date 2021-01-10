@@ -13,14 +13,14 @@ namespace SemestriProject.Pages.RoadFreight
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        protected internal override string getPageUrl() => "/RoadFreight/Baltic";
+        public override string getPageUrl() => "/RoadFreight/Baltic";
 
-        protected internal override Baltic toObject(BalticView view)
+        public override Baltic toObject(BalticView view)
         {
             return BalticViewFactory.Create(view);
         }
 
-        protected internal override BalticView toView(Baltic obj)
+        public override BalticView toView(Baltic obj)
         {
             return BalticViewFactory.Create(obj);
         }

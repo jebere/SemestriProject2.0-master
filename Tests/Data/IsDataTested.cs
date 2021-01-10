@@ -19,6 +19,11 @@ namespace SemestriProject.Tests.Data
         }
 
         [TestMethod]
+        public void IsOrderTested()
+        {
+            isAllTested(assembly, Namespace("Order"));
+        }
+        [TestMethod]
         public void IsAirFreightTested()
         {
             isAllTested(assembly, Namespace("AirFreight"));

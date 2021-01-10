@@ -14,7 +14,7 @@ namespace SemestriProject.Tests.Pages.Extensions
         [TestMethod]
         public void DisabledControlsForTest()
         {
-            var obj = new HtmlHelperMock<RoadFreightView>().DisabledControlsFor(x => x.Loading);
+            var obj = new HtmlHelperMock<RoadFreightEntityView>().DisabledControlsFor(x => x.Loading);
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
 
@@ -22,7 +22,7 @@ namespace SemestriProject.Tests.Pages.Extensions
         public void HtmlStringTest()
         {
             var expected = new List<string> { "<div", "<fieldset disabled>", "LabelFor", "EditorFor", "ValidationMessageFor", "</fieldset>", "</div>" };
-            var actual = DisabledControlsForHtmlExtension.htmlStrings(new HtmlHelperMock<AirFreightView>(), x => x.TypeOfCargo);
+            var actual = DisabledControlsForHtmlExtension.htmlStrings(new HtmlHelperMock<AirFreightEntityView>(), x => x.TypeOfCargo);
             TestHtml.Strings(actual, expected);
         }
     }

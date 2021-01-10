@@ -8,7 +8,7 @@ namespace SemestriProject.Infra.RoadFreight
     {
         public RussiaCISRepository(RoadFreightDbContext c) : base(c, c.RussiaAndCIS) { }
 
-        protected internal override RussiaAndCIS toDomainObjects(RussiaAndCISData d) => new RussiaAndCIS(d);
+        public override RussiaAndCIS toDomainObjects(RussiaAndCISData d) => new RussiaAndCIS(d);
 
     }
 }

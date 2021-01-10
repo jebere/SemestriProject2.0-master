@@ -41,7 +41,7 @@ namespace SemestriProject.Tests.Infra.Common
             data = GetRandom.Object<AmericaData>();
         }
 
-        [TestMethod]
+       
         public void GetTest()
         {
             var count = GetRandom.UInt8(15, 30);

@@ -13,14 +13,14 @@ namespace SemestriProject.Pages.AirFreight
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        protected internal override string getPageUrl() => "/AirFreight/America";
+        public override string getPageUrl() => "/AirFreight/America";
 
-        protected internal override America toObject(AmericaView view)
+        public override America toObject(AmericaView view)
         {
             return AmericaViewFactory.Create(view);
         }
 
-        protected internal override AmericaView toView(America obj)
+        public override AmericaView toView(America obj)
         {
             return AmericaViewFactory.Create(obj);
         }

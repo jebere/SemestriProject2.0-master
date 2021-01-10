@@ -17,7 +17,11 @@ namespace SemestriProject.Tests.Pages
         {
             isAllTested(assembly, Namespace("Common"));
         }
-
+        [TestMethod]
+        public void IsOrderTested()
+        {
+            isAllTested(assembly, Namespace("Order"));
+        }
         [TestMethod]
         public void IsAirFreightTested()
         {

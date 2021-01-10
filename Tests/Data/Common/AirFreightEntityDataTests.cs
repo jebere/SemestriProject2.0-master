@@ -5,7 +5,7 @@ using SemestriProject.Data.Common;
 namespace SemestriProject.Tests.Data.Common
 {
     [TestClass]
-    class AirFreightEntityDataTests : AbstractClassTests<AirFreightEntityData, DefinedEntityData>
+    public class AirFreightEntityDataTests : AbstractClassTests<AirFreightEntityData, DefinedEntityData>
     {
         private class testClass : AirFreightEntityData { }
 

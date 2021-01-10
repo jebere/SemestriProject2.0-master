@@ -36,6 +36,9 @@ namespace SemestriProject.Tests.Pages.RoadFreight
         public void PageUrlTest() => Assert.AreEqual("/RoadFreight/RussiaAndCIS", obj.PageUrl);
 
         [TestMethod]
+        public void getPageUrlTest() => Assert.AreEqual("/RoadFreight/RussiaAndCIS", obj.getPageUrl());
+
+        [TestMethod]
         public void ToObjectTest()
         {
             var view = GetRandom.Object<RussiaAndCISView>();

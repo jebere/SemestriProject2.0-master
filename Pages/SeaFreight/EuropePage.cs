@@ -13,14 +13,14 @@ namespace SemestriProject.Pages.SeaFreight
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        protected internal override string getPageUrl() => "/SeaFreight/Europe";
+        public override string getPageUrl() => "/SeaFreight/Europe";
 
-        protected internal override Europe toObject(EuropeView view)
+        public override Europe toObject(EuropeView view)
         {
             return EuropeViewFactory.Create(view);
         }
 
-        protected internal override EuropeView toView(Europe obj)
+        public override EuropeView toView(Europe obj)
         {
             return EuropeViewFactory.Create(obj);
         }

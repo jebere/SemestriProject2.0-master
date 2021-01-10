@@ -37,9 +37,9 @@ namespace SemestriProject.Pages.Common
 
         public string PageUrl => getPageUrl();
 
-        protected internal abstract string getPageUrl();
+        public abstract string getPageUrl();
 
-        protected internal virtual string getPageSubTitle()
+        public virtual string getPageSubTitle()
         {
             return string.Empty;
         }
@@ -78,7 +78,7 @@ namespace SemestriProject.Pages.Common
         public int TotalPages => db.TotalPages;
 
 
-        protected internal async Task<bool> addObject(string fixedFilter, string fixedValue)
+        public async Task<bool> addObject(string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;
             FixedValue = fixedValue;
@@ -99,9 +99,9 @@ namespace SemestriProject.Pages.Common
             return true;
         }
 
-        protected internal abstract TDomain toObject(TView view);
+        public abstract TDomain toObject(TView view);
 
-        protected internal async Task updateObject(string fixedFilter, string fixedValue)
+        public async Task updateObject(string fixedFilter, string fixedValue)
         {
             // TODO see viga tuleb lahendada
             // To protect from overposting attacks, please enable the specific properties you want to bind to, for
@@ -112,7 +112,7 @@ namespace SemestriProject.Pages.Common
 
         }
 
-        protected internal async Task getObject(string id, string fixedFilter, string fixedValue)
+        public async Task getObject(string id, string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;
             FixedValue = fixedValue;
@@ -120,9 +120,9 @@ namespace SemestriProject.Pages.Common
             Item = toView(o);
         }
 
-        protected internal abstract TView toView(TDomain obj);
+        public abstract TView toView(TDomain obj);
 
-        protected internal async Task deleteObject(string id, string fixedFilter, string fixedValue)
+        public async Task deleteObject(string id, string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;
             FixedValue = fixedValue;
@@ -142,7 +142,7 @@ namespace SemestriProject.Pages.Common
                    +$"&fixedFilter={FixedFilter}&fixedValue={FixedValue}";
         }
 
-        protected internal async Task getList(string sortOrder, string currentFilter, string searchString,
+        public async Task getList(string sortOrder, string currentFilter, string searchString,
             int? pageIndex, string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;
@@ -153,19 +153,27 @@ namespace SemestriProject.Pages.Common
             Items = await getList();
         }
 
-        private string getSearchString(string currentFilter, string searchString, ref int? pageIndex)
+        public static string
+            getSearchString(string currentFilter, string searchString, ref int? pageIndex)
         {
             if (searchString != null) { pageIndex = 1; }
             else { searchString = currentFilter; }
 
             return searchString;
+
         }
 
-        internal async Task<List<TView>> getList()
+        public async Task<List<TView>> getList()
         {
             var l = await db.Get();
 
             return l.Select(toView).ToList();
         }
+        public void setFixedFilter(string fixedFilter, string fixedValue)
+        {
+            FixedFilter = fixedFilter;
+            FixedValue = fixedValue;
+        }
+
     }
 }

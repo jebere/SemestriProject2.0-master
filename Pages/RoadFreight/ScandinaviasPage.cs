@@ -13,14 +13,14 @@ namespace SemestriProject.Pages.RoadFreight
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        protected internal override string getPageUrl() => "/RoadFreight/Scandinavia";
+        public override string getPageUrl() => "/RoadFreight/Scandinavia";
 
-        protected internal override Scandinavia toObject(ScandinaviaView view)
+        public override Scandinavia toObject(ScandinaviaView view)
         {
             return ScandinaviaViewFactory.Create(view);
         }
 
-        protected internal override ScandinaviaView toView(Scandinavia obj)
+        public override ScandinaviaView toView(Scandinavia obj)
         {
             return ScandinaviaViewFactory.Create(obj);
         }

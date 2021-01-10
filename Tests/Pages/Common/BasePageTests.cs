@@ -32,6 +32,16 @@ namespace SemestriProject.Tests.Pages.Common
         }
 
         [TestMethod]
+        public void PageUrlTest()
+        {
+            isReadOnlyProperty(obj, nameof(obj.PageUrl), obj.getPageUrl());
+        }
+        [TestMethod]
+        public void GetPageUrlTest()
+        {
+            Assert.AreEqual(obj.PageUrl, obj.getPageUrl());
+        }
+        [TestMethod]
         public void FixedFilterTest()
         {
             var s = GetRandom.String();
@@ -76,7 +86,6 @@ namespace SemestriProject.Tests.Pages.Common
             var o = obj.toObject(v);
             testArePropertyValuesEqual(v, o.Data);
         }
-
         [TestMethod]
         public void UpdateObjectTest()
         {

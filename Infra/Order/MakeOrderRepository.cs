@@ -8,7 +8,7 @@ namespace SemestriProject.Infra.Order
     {
         public MakeOrderRepository(OrderDbContext c) : base(c, c.MakeOrder) { }
 
-        protected internal override MakeOrder toDomainObjects(MakeOrderData d) => new MakeOrder(d);
+        public override MakeOrder toDomainObjects(MakeOrderData d) => new MakeOrder(d);
 
     }
 }

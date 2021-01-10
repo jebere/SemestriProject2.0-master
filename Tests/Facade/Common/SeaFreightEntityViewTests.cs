@@ -4,10 +4,10 @@ using SemestriProject.Facade.Common;
 namespace SemestriProject.Tests.Facade.Common
 {
     [TestClass]
-    public class SeaFreightViewTests : AbstractClassTests<SeaFreightView, DefinedEntityView>
+    public class SeaFreightEntityViewTests : AbstractClassTests<SeaFreightEntityView, DefinedEntityView>
 
     {
-        private class testClass : SeaFreightView { }
+        private class testClass : SeaFreightEntityView { }
 
         [TestInitialize]
         public override void TestInitialize()

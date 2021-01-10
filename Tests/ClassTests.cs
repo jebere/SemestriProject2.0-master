@@ -2,6 +2,7 @@
 
 namespace SemestriProject.Tests
 {
+    [TestClass]
     public abstract class ClassTests<TClass, TBaseClass> : BaseClassTests<TClass, TBaseClass> where TClass : new()
 
     {

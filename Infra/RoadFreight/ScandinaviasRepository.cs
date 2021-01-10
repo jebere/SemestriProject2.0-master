@@ -8,7 +8,7 @@ namespace SemestriProject.Infra.RoadFreight
     {
         public ScandinaviasRepository(RoadFreightDbContext c) : base(c, c.Scandinavia) { }
 
-        protected internal override Scandinavia toDomainObjects(ScandinaviaData d) => new Scandinavia(d);
+        public override Scandinavia toDomainObjects(ScandinaviaData d) => new Scandinavia(d);
 
     }
 }

@@ -8,7 +8,7 @@ namespace SemestriProject.Infra.SeaFreight
     {
         public EuropeRepository(SeaFreightDbContext c) : base(c, c.Europe) { }
 
-        protected internal override Europe toDomainObjects(EuropeData d) => new Europe(d);
+        public override Europe toDomainObjects(EuropeData d) => new Europe(d);
 
     }
 }

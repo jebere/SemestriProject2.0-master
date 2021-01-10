@@ -13,14 +13,14 @@ namespace SemestriProject.Pages.RoadFreight
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        protected internal override string getPageUrl() => "/RoadFreight/RussiaAndCIS";
+        public override string getPageUrl() => "/RoadFreight/RussiaAndCIS";
 
-        protected internal override RussiaAndCIS toObject(RussiaAndCISView view)
+        public override RussiaAndCIS toObject(RussiaAndCISView view)
         {
             return RussiaAndCISViewFactory.Create(view);
         }
 
-        protected internal override RussiaAndCISView toView(RussiaAndCIS obj)
+        public override RussiaAndCISView toView(RussiaAndCIS obj)
         {
             return RussiaAndCISViewFactory.Create(obj);
         }

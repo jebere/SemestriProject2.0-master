@@ -12,7 +12,7 @@ namespace SemestriProject.Infra.Common
         where TDomain : Entity<TData>, new()
     {
         protected internal DbContext db;
-        protected internal DbSet<TData> dbSet;
+        public DbSet<TData> dbSet;
 
         protected BaseRepository(DbContext c, DbSet<TData> s)
         {
@@ -28,12 +28,12 @@ namespace SemestriProject.Infra.Common
 
         internal List<TDomain> toDomainObjectsList(List<TData> set) => set.Select(toDomainObjects).ToList();
 
-        protected internal abstract TDomain toDomainObjects(TData periodData);
+        public abstract TDomain toDomainObjects(TData periodData);
 
         internal async Task<List<TData>> runSqlQueryAsync(IQueryable<TData> query) => await query.AsNoTracking().ToListAsync();
-        
 
-        protected internal virtual IQueryable<TData> createSqlQuery()
+
+        public virtual IQueryable<TData> createSqlQuery()
         {
             var query = from s in dbSet select s;
             return query;

@@ -57,14 +57,14 @@ namespace SemestriProject.Tests.Infra.Common
             => isNullableProperty(() => obj.FixedValue, x => obj.FixedValue = x);
 
         [TestMethod]
-        public void CreateSqlQueryTest()
+        public void createSqlQueryTest()
         {
             var sql = obj.createSqlQuery();
             Assert.IsNotNull(sql);
         }
 
         [TestMethod]
-        public void AddFixedFilteringTest()
+        public void addFixedFilteringTest()
         {
             var sql = obj.createSqlQuery();
             var fixedFilter = GetMember.Name<AmericaData>(x => x.TypeOfCargo);
@@ -76,7 +76,7 @@ namespace SemestriProject.Tests.Infra.Common
         }
 
         [TestMethod]
-        public void CreateFixedWhereExpressionTest()
+        public void createFixedWhereExpressionTest()
         {
             var properties = typeof(AmericaData).GetProperties();
             var idx = GetRandom.Int32(0, properties.Length);
@@ -96,7 +96,7 @@ namespace SemestriProject.Tests.Infra.Common
         }
 
         [TestMethod]
-        public void CreateFixedWhereExpressionOnFixedFilterNullTest()
+        public void createFixedWhereExpressionOnFixedFilterNullTest()
         {
             Assert.IsNull(obj.createFixedWhereExpression());
             obj.FixedValue = GetRandom.String();
@@ -105,7 +105,7 @@ namespace SemestriProject.Tests.Infra.Common
         }
 
         [TestMethod]
-        public void AddFilteringTest()
+        public void addFilteringTest()
         {
             var sql = obj.createSqlQuery();
             var searchString = GetRandom.String();
